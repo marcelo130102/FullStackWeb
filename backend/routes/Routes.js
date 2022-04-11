@@ -1,5 +1,7 @@
 import express from "express";
-import { createTodo, createUser, deleteTodo, getAllTodo, getTodo, getUser, updateTodo, updateUser } from "../controllers/AppController.js";
+import { createTodo, deleteTodo, getAllTodo, getTodo, updateTodo } from "../controllers/TodoController.js";
+import {createUser, updateUser, getUser} from "../controllers/UserController.js"
+import {createCarpet, deleteCarpet, getAllCarpet, updateCarpet} from "../controllers/CarpetController.js"
 
 const router = express.Router();
 
@@ -9,15 +11,23 @@ router.get('/validate/:username', getUser);
 
 router.put('/data/:username', updateUser)
 
-router.get('/:username', getAllTodo);
+router.get('/:username/:carpet_u', getAllTodo);
 
-router.get('/:username/:id', getTodo);
+router.get('/:username/:carpet_u/:id', getTodo);
 
-router.post('/:username', createTodo);
+router.post('/:username/:carpet_u', createTodo);
 
-router.put('/:username/:id', updateTodo);
+router.put('/:username/:carpet_u/:id', updateTodo);
 
-router.delete('/:username/:id', deleteTodo)
+router.delete('/:username/:carpet_u/:id', deleteTodo)
+
+router.get('/:username' ,getAllCarpet);
+
+router.post('/:username', createCarpet);
+
+router.put('/:username/:id', updateCarpet);
+
+router.delete('/:username/:id', deleteCarpet)
 
 
 export default router;
