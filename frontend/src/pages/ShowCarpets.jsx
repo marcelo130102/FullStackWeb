@@ -6,7 +6,7 @@ import { Link, useParams } from 'react-router-dom'
 const CompShowCarpets = () =>{
     const {username} = useParams();
     const [carpets, setCarpets] = useState([]);
-    const URI = 'http://localhost:8000/todos/';
+    const URI = 'https://app-backend-nsolver.herokuapp.com/todos/';
 
     useEffect(() => {
         getcarpets()

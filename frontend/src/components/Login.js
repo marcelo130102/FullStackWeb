@@ -6,17 +6,18 @@ const Login = () =>{
     const [user, setUser] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
-    const URI = 'http://localhost:8000/todos/validate/';
+    const URI = 'https://app-backend-nsolver.herokuapp.com/todos/validate/';
 
     const getUser = async (username)=>{
         const userRes = await axios.get(`${URI}${username}`)
+
         return userRes.data[0];
     }
 
     const validate = async (event)=>{
         event.preventDefault();
         const userRes = await getUser(user);
-        
+
         if(userRes.pass_word === password){
             const data = userRes.username
             navigate("/"+data)
@@ -37,6 +38,7 @@ const Login = () =>{
                     value={user}
                     onChange={(e) => setUser(e.target.value)}
                     className="form-control"
+                    required
                     />
                 </label>
             </div>
@@ -47,6 +49,7 @@ const Login = () =>{
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     className="form-control"
+                    required
                     />
                 </label>
             </div>

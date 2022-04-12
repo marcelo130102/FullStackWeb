@@ -9,6 +9,7 @@ import CompShowCarpets from './pages/ShowCarpets';
 import CompCreateCarpet from './components/CreateCarpet';
 import CompCreateTodo from './components/CreateTodo';
 import UpdateTodo from './components/UpdateTodo';
+import UpdateCarpet from './components/UpdateCarpet';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path='/:username/createCarpet' element={<CompCreateCarpet/>}/>
           <Route path='/:username/:carpet_u/createTodo' element={<CompCreateTodo/>}/>
           <Route path='/edit/:username/:carpet_u/:id' element={<UpdateTodo/>}/>
+          <Route path='/edit/:username/:id' element={<UpdateCarpet/>}/>
         </Routes>
       </BrowserRouter>
       

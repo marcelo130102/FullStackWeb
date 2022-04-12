@@ -1,7 +1,7 @@
 import express from "express";
 import { createTodo, deleteTodo, getAllTodo, getTodo, updateTodo } from "../controllers/TodoController.js";
 import {createUser, updateUser, getUser} from "../controllers/UserController.js"
-import {createCarpet, deleteCarpet, getAllCarpet, updateCarpet} from "../controllers/CarpetController.js"
+import {createCarpet, deleteCarpet, getAllCarpet, updateCarpet, getCarpet} from "../controllers/CarpetController.js"
 
 const router = express.Router();
 
@@ -13,7 +13,7 @@ router.put('/data/:username', updateUser)
 
 router.get('/:username/:carpet_u', getAllTodo);
 
-router.get('/:username/:carpet_u/:id', getTodo);
+router.get('/todo/:username/:carpet_u/:id', getTodo);
 
 router.post('/:username/:carpet_u', createTodo);
 
@@ -24,6 +24,8 @@ router.delete('/:username/:carpet_u/:id', deleteTodo)
 router.get('/:username' ,getAllCarpet);
 
 router.post('/:username', createCarpet);
+
+router.get('/carpets/:username/:id', getCarpet);
 
 router.put('/:username/:id', updateCarpet);
 

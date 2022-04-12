@@ -10,7 +10,7 @@ const CompShowTodos = () =>{
     const {carpet_u} = useParams();
     const [todos, setTodos] = useState([]);
     const navigate = useNavigate();
-    const URI = 'http://localhost:8000/todos/';
+    const URI = 'https://app-backend-nsolver.herokuapp.com/todos/';
 
     useEffect(() => {
         getTodos()

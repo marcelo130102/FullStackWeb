@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { navigate, useNavigate, useParams } from "react-router-dom";
 
-const URI = 'http://localhost:8000/todos/';
+const URI = 'https://app-backend-nsolver.herokuapp.com/todos/';
 
 const CompCreateCarpet = ()=>{
     const navigate = useNavigate();

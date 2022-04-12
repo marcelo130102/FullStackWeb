@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
-const URI = 'http://localhost:8000/todos/';
+const URI = 'https://app-backend-nsolver.herokuapp.com/todos/';
 
 
 const UpdateTodo = ()=>{
@@ -15,8 +15,7 @@ const UpdateTodo = ()=>{
     const [content, setContent] = useState("");
     
     const getTodoById = async () => {
-        const res = await axios.get(`${URI}${username}/${carpet_u}/${id}`)
-        console.log(res)
+        const res = await axios.get(`${URI}todo/${username}/${carpet_u}/${id}`)
         setTitle(res.data[0].title)
         setContent(res.data[0].content)
     }
